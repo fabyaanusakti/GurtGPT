@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3$t4ucjom(4e-wco#k5&oj6xjy@x5r84+m!g^*k77q(rw%gq5q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gurtgpt-production.up.railway.app']
 
 GEMINI_API_KEY = 'AIzaSyASxwZoClQa7eRMeps5rsBNaIjH_IpPnXs'
 
