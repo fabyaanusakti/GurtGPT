@@ -19,7 +19,7 @@ CSRF_TRUSTED_ORIGINS = ['https://gurtgpt-production.up.railway.app']
 SESSION_COOKIE_DOMAIN = '.railway.app'
 CSRF_COOKIE_DOMAIN = '.railway.app'
 
-GEMINI_API_KEY = 'AIzaSyASxwZoClQa7eRMeps5rsBNaIjH_IpPnXs'
+GEMINI_API_KEY = ''
 
 # Application definition
 
