@@ -1,28 +1,42 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
     <title>GurtGPT</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 
 <body>
-    <h1>GurtGPT</h1>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" name="prompt" placeholder="Ask me anything...">
-        <button type="submit">Send</button>
-    </form>
-
-    <div class="chat">
-        {% for message in chat %}
-        <div class="message">
-            <p><strong>Yo:</strong> {{ message.user }}</p>
-            <p><strong>Gurt:</strong> {{ message.gurt }}</p>
+    <div class="container">
+        <h1>GurtGPT</h1>
+        <div class="chat-container">
+            <div class="chat-messages">
+                {% if response %}
+                <div>
+                    <p><strong>You:</strong> {{ prompt }}</p>
+                    <p><strong>GurtGPT:</strong> {{ response }}</p>
+                </div>
+                {% endif %}
+            </div>
+            <form method="post" class="chat-form">
+                {% csrf_token %}
+                <input type="text" name="user_input" class="chat-input" placeholder="Ask me anything..." required>
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
         </div>
-        {% endfor %}
     </div>
+    <div id="loading" style="display: none;">
+        <p>GurtGPT is thinking...</p>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            document.getElementById('loading').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
