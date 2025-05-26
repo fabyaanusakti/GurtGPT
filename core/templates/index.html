@@ -12,6 +12,11 @@
 <body>
     <div class="container">
         <h1>GurtGPT</h1>
+        <form method="post" class="chat-form">
+            {% csrf_token %}
+            <input type="text" name="prompt" class="chat-input" placeholder="Ask me anything..." required>
+            <button type="submit" class="submit-btn">Kirim</button>
+        </form>
         <div class="chat-container">
             <div class="chat-messages">
                 {% if response %}
@@ -21,15 +26,10 @@
                 </div>
                 {% endif %}
             </div>
-            <form method="post" class="chat-form">
-                {% csrf_token %}
-                <input type="text" name="prompt" class="chat-input" placeholder="Ask me anything..." required>
-                <button type="submit" class="submit-btn">Send</button>
-            </form>
         </div>
     </div>
     <div id="loading" style="display: none;">
-        <p>GurtGPT is thinking...</p>
+        <p>Gurt: hmm...</p>
     </div>
 
     <script>
