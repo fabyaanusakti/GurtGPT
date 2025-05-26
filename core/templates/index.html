@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GurtGPT</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+    <h1>GurtGPT</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="prompt" placeholder="Ask me anything...">
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="chat">
+        {% for message in chat %}
+        <div class="message">
+            <p><strong>Yo:</strong> {{ message.user }}</p>
+            <p><strong>Gurt:</strong> {{ message.gurt }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
