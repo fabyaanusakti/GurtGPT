@@ -53,6 +53,20 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
+strong {
+    font-weight: 600;
+    color: #2c3e50; /* Darker color for bold text */
+}
+
+.message strong {
+    color: inherit; /* Use existing text color */
+    font-weight: 700;
+}
+
+.bot-message strong {
+    color: #1a73e8; /* Blue for AI's bold text */
+}
+
 /* Responsive breakpoints */
 @media (max-width: 768px) {
     body {
