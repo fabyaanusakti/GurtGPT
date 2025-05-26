@@ -23,7 +23,7 @@
             </div>
             <form method="post" class="chat-form">
                 {% csrf_token %}
-                <input type="text" name="user_input" class="chat-input" placeholder="Ask me anything..." required>
+                <input type="text" name="prompt" class="chat-input" placeholder="Ask me anything..." required>
                 <button type="submit" class="submit-btn">Send</button>
             </form>
         </div>
