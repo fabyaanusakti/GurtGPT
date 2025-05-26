@@ -8,11 +8,11 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
 import os
-import sys
+# import sys
 
-project_home = '/home/faizbyaan/base'
-if project_home not in sys.path:
-    sys.path.insert(0, project_home)
+# project_home = '/home/faizbyaan/base'
+# if project_home not in sys.path:
+#     sys.path.insert(0, project_home)
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'base.settings')
 
