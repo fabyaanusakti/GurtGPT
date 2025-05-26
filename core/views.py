@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from . import service
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def chat_view(request):
     if 'chat' not in request.session:
         request.session['chat'] = []

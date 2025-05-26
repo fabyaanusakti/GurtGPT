@@ -1,8 +1,10 @@
 import google.generativeai as gurt
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 gurt.configure(api_key=settings.GEMINI_API_KEY)
 
+@csrf_exempt
 def response(prompt_text):
     """
     Generates text using the Gemini API.
